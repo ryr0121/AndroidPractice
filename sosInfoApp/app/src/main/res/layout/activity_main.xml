@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/nameTextView"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="36dp"
+        android:text="이름"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/nameValueTextView"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="36dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="김초원"
+        app:layout_constraintBaseline_toBaselineOf="@id/nameTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/guideline" />
+
+    <TextView
+        android:id="@+id/birthTextView"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="생년월일"
+        app:layout_constraintStart_toStartOf="@id/nameTextView"
+        app:layout_constraintTop_toBottomOf="@id/nameTextView" />
+
+    <TextView
+        android:id="@+id/birthValueTextView"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="2000.01.21"
+        app:layout_constraintBaseline_toBaselineOf="@id/birthTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
+
+    <TextView
+        android:id="@+id/bloodTypeTextView"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="혈액형"
+        app:layout_constraintStart_toStartOf="@id/birthTextView"
+        app:layout_constraintTop_toBottomOf="@id/birthTextView" />
+
+    <TextView
+        android:id="@+id/bloodTypeValueTextView"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="B"
+        app:layout_constraintBaseline_toBaselineOf="@id/bloodTypeTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
+
+    <TextView
+        android:id="@+id/sosPhoneTextView"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비상 연락처"
+        app:layout_constraintStart_toStartOf="@id/bloodTypeTextView"
+        app:layout_constraintTop_toBottomOf="@id/bloodTypeTextView" />
+
+    <TextView
+        android:id="@+id/sosPhoneValueTextView"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="010-0000-0000"
+        app:layout_constraintBaseline_toBaselineOf="@id/sosPhoneTextView"
+        app:layout_constraintEnd_toStartOf="@id/sosCallImageView" />
+
+    <ImageView
+        android:id="@+id/sosCallImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/baseline_call_24"
+        app:layout_constraintBottom_toBottomOf="@id/sosPhoneValueTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView"
+        app:layout_constraintTop_toTopOf="@id/sosPhoneValueTextView" />
+
+    <TextView
+        android:id="@+id/notiInfoTextView"
+        style="@style/Title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        app:layout_constraintStart_toStartOf="@id/sosPhoneTextView"
+        app:layout_constraintTop_toBottomOf="@id/sosPhoneTextView" />
+
+    <TextView
+        android:id="@+id/notiInfoValueTextView"
+        style="@style/Value"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="주의사항"
+        app:layout_constraintBaseline_toBaselineOf="@id/notiInfoTextView"
+        app:layout_constraintEnd_toEndOf="@id/nameValueTextView" />
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_percent="0.4" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/moveToInputActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_edit_24" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/deleteButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="36dp"
+        android:clickable="true"
+        app:layout_constraintBottom_toTopOf="@id/moveToInputActivity"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:srcCompat="@drawable/baseline_delete_forever_24" />
+
+    <androidx.constraintlayout.helper.widget.Layer
+        android:id="@+id/moveToSosCallLayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="sosPhoneValueTextView,sosCallImageView"
+        tools:ignore="MissingConstraints" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
